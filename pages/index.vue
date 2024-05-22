@@ -1,6 +1,7 @@
 <template>
   <v-container class="justify-center mt-5">
-    <TabelaDados @editItem="editItem" @abrirDialog="() => ativo = true" titulo="Eventos" :loading="loading" @deleteItem="deleteItem" :headers="headers" :items="items"></TabelaDados>
+    <TabelaDados v-if="items.length > 0" @editItem="editItem" @abrirDialog="() => ativo = true" titulo="Eventos" :loading="loading" @deleteItem="deleteItem" :headers="headers" :items="items"></TabelaDados>
+    <h1 v-else> Sem items</h1>
   </v-container>
   <v-dialog
       v-model="ativo"
