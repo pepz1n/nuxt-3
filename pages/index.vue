@@ -62,6 +62,7 @@
         <v-row>
           <v-col>
             <v-text-field
+              mask="###-##"
               variant="outlined"
               label="local"
               placeholder="local"
@@ -192,7 +193,9 @@ export default {
       if (confirm(`Deseja deletar o registro com id ${item.id}`)) {
         const response = await this.$api.post('/atividade/destroy'  );
         if (response.type == 'error') {
-          alert(response.message);
+          this.$toast.error('Erro ao excluir')
+        } else {
+          this.$toast.success('Excluido com sucesso')
         }
       }
       await this.getItems();

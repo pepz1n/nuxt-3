@@ -19,7 +19,7 @@ const temaCustomizado = {
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ["vuetify-nuxt-module", '@nuxt/eslint'],
-  plugins: ['~/plugins/axios.js'],
+  plugins: ['~/plugins/axios.js', '~/plugins/toast.ts'],
   vuetify: {
     /* vuetify options */
     vuetifyOptions: {
